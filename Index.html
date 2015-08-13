@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Speed Dial Demo</title>
+    <link href="/style/demo.min.css" rel="stylesheet"/>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <section class="container">
+        <article>
+            <header>
+                <h1>Simple Speed Dial Floating Action Button</h1>
+            </header>
+            <p>A simple Material design Speed Dial Floating Action Button that was the inspiration behind the <a href="http://davidglenn.uk">social share buttons on the davidglenn.uk site</a>. Works in Latest Chrome, Firefox and IE10+.</p>
+            <p class="centertext">
+                <a class="flat" href="https://github.com/davidglenn/material-speed-dial"><span class="fa fa-github"></span>View Source</a>
+            </p>
+            <form>
+                <div>
+                    <textarea id="html"></textarea>
+                </div>
+                <div>
+                    <label>Layout: </label>
+                    <label><input name="position" type="radio" value="fabTopLeft" checked />top left</label>
+                    <label><input name="position" type="radio" value="fabTopRight" />top right</label>
+                    <label><input name="position" type="radio" value="fabBottomLeft" />bottom left</label>
+                    <label><input name="position" type="radio" value="fabBottomRight" />bottom right</label>
+                </div>
+            </form>
+        </article>
+    </section>
+    
+
+    <!-- FAB appears in the top left of the page -->
+    <div id="fabTopLeft" class="speed-dial fab top-left">
+        <a class="small toggle bg-share"><span class="fa fa-share-alt"></span></a>
+        <ul class="dials">
+            <li><a class="small bg-twitter" href="https://twitter.com/intent/tweet?via=daviglenn"><span class="fa fa-twitter"></span></a></li>
+            <li><a class="small bg-facebook" href="https://www.facebook.com/sharer/sharer.php?u="><span class="fa fa-facebook"></span></a></li>
+            <li><a class="small bg-google-plus" href="https://plus.google.com/share?url="><span class="fa fa-google-plus"></span></a></li>
+        </ul>
+    </div>
+    <!-- FAB appears in the top right of the page -->
+    <div id="fabTopRight" class="speed-dial fab top-right">
+        <a class="small toggle bg-share"><span class="fa fa-share-alt"></span></a>
+        <ul class="dials">
+            <li><a class="small bg-twitter" href="https://twitter.com/intent/tweet?via=daviglenn"><span class="fa fa-twitter"></span></a></li>
+            <li><a class="small bg-facebook" href="https://www.facebook.com/sharer/sharer.php?u="><span class="fa fa-facebook"></span></a></li>
+            <li><a class="small bg-google-plus" href="https://plus.google.com/share?url="><span class="fa fa-google-plus"></span></a></li>
+        </ul>
+    </div>
+    <!-- FAB appears in the bottom left of the page -->
+    <div id="fabBottomLeft" class="speed-dial fab bottom-left">
+        <ul class="dials">
+            <li><a class="small bg-google-plus" href="https://plus.google.com/share?url="><span class="fa fa-google-plus"></span></a></li>
+            <li><a class="small bg-facebook" href="https://www.facebook.com/sharer/sharer.php?u="><span class="fa fa-facebook"></span></a></li>
+            <li><a class="small bg-twitter" href="https://twitter.com/intent/tweet?via=daviglenn"><span class="fa fa-twitter"></span></a></li>
+        </ul>
+        <a class="small toggle bg-share"><span class="fa fa-share-alt"></span></a>
+    </div>
+    <!-- FAB appears in the bottom right of the page -->
+    <div id="fabBottomRight" class="speed-dial fab bottom-right">
+        <ul class="dials">
+            <li><a class="small bg-google-plus" href="https://plus.google.com/share?url="><span class="fa fa-google-plus"></span></a></li>
+            <li><a class="small bg-facebook" href="https://www.facebook.com/sharer/sharer.php?u="><span class="fa fa-facebook"></span></a></li>
+            <li><a class="small bg-twitter" href="https://twitter.com/intent/tweet?via=daviglenn"><span class="fa fa-twitter"></span></a></li>
+        </ul>
+        <a class="small toggle bg-share"><span class="fa fa-share-alt"></span></a>
+    </div>
+    
+
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="/scripts/speed-dial.min.js"></script>
+    <script>
+        $(function () {
+            /* initially the text area displays the html required for the top left FAB */
+            $('#html').text($('#fabTopLeft')[0].outerHTML);
+            /* The text area displays the html required to render the currently displayed FAB */
+            $('input[type="radio"]').on('click', function (e) {
+                var fab;
+                $('.speed-dial').hide();
+                fab = $('#' + $(this).val());
+                fab.show();
+                $('#html').text(fab[0].outerHTML);
+            });
+        });
+    </script>
+</body>
+</html>

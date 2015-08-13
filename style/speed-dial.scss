@@ -1,0 +1,43 @@
+﻿@import '_circles.scss';
+@import '_animations.scss';
+
+.speed-dial {
+    text-align: center;
+    display: inline-block;
+    a,
+    a:hover,
+    a:active,
+    a:visited,
+    a:focus {
+        color: #fafafa;
+        display: inline-block;
+        text-decoration: none;
+    }
+    .toggle {
+        @extend .circle;
+        margin: 8px 0;
+    }
+    &:hover .dials a {
+        animation: pop-in .3s ease both;
+    }
+    .dials {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        a {
+            @extend .circle;
+            margin: 8px 0;
+            transform: scale(0);
+            animation: pop-out .3s ease both;
+        }
+        a.pop-in {
+            animation: pop-in .3s ease both;
+        }
+        //add incremental delays so that the buttons pop in order, supports up to 6 links
+        @for $i from 0 through 6 {
+             li:nth-child(#{$i}) a { 
+                 animation-delay: $i * 0.1s; 
+             }
+        }
+    }
+}

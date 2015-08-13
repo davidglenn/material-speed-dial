@@ -1,0 +1,85 @@
+﻿body {
+    font-size: 16px;
+    font-family: sans-serif;
+    line-height: 1.5rem;
+}
+
+a {
+    color: #15b897;
+    &.flat {
+        text-transform: uppercase;
+        text-decoration: none;
+        margin-right: 32px;
+        .fa {
+           margin-right: .5rem;
+        }
+    }
+}
+
+p { margin: 32px 0; }
+
+textarea {
+    width: 100%;
+    height: 300px;
+}
+
+
+.container {
+    margin: 100px auto;
+    width: 500px;
+    background-color: #eee;
+    padding: 50px;
+}
+
+.centertext {
+    text-align: center;
+}
+
+
+.bg-share {
+    background-color: #15B897;
+    color: #FAFAFA;
+}
+.bg-twitter {
+    background-color: #2daae2;
+    color: #FAFAFA;
+}
+.bg-facebook {
+    background-color: #3c5b9b;
+    color: #FAFAFA;
+}
+.bg-google-plus {
+    background-color: #f73e29;
+    color: #FAFAFA;
+}
+
+
+.fab {
+    position: absolute;
+    margin: 32px;
+    &.speed-dial {
+        display: none;
+    }
+    &.top-left {
+        top: 0;
+        left: 0;
+    }
+    &.top-right {
+        top: 0;
+        right: 0;
+    }
+    &.bottom-left {
+        bottom: 0;
+        left: 0;
+    }
+    &.bottom-right {
+        bottom: 0;
+        right: 0;
+    }
+}
+#fabTopLeft {
+    display: block;
+}
+
+
+@import 'speed-dial.scss';
